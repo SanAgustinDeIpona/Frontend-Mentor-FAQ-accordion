@@ -1,0 +1,29 @@
+@use 'variables' as v;
+@use 'mixins' as mix;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100vh;
+    
+}
+
+body{
+    background: rgb(240, 239, 238);
+    font-family: map-get(v.$font, "primary");
+    height: 100%;
+}
+
+@include mix.destock(){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

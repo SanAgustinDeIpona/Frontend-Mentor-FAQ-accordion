@@ -1,0 +1,75 @@
+@use 'variables' as v;
+@use 'mixins' as mix;
+
+.container{
+  background-color: map-get(v.$colors, "light-pink");
+  height: 100%;
+
+  .faqs{
+    background-color: map-get(v.$colors, "white");
+    height: 520px;
+    width: 90%;
+    max-width: 531px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: -100px; 
+    border-radius: 10px;
+  
+    &__title{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+  
+    &__container{
+      height: 0;
+      border-bottom: 2px solid map-get(v.$colors, "light-pink");
+      overflow: hidden;
+      transition: height .3s ease;
+    }
+  
+    &__container--active{
+      height: 90px;
+    }
+  
+    &__query{
+      color: map-get(v.$colors, "dark-purple" );
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 17px;
+      margin: 25px 0;
+  
+      &:hover{
+        color: map-get(v.$colors, "purple");
+        cursor: pointer;
+      }
+    }
+  
+    &__answer{
+      color: map-get(v.$colors, "grayish-purple");
+      margin-bottom: 20px;
+      line-height: 1.4em;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+}
+
+@include mix.destock(){
+  .container{
+    height: 92%;
+    width: 1157px;
+    min-height: 660px;
+    max-height: 785px;
+    margin: 0 auto;
+    margin-top: .2%;
+    box-shadow: 0px 25px 5rem 1px rgba(0,0,0,0.5);
+
+    .faqs{
+      height: 495px;
+    } 
+  }
+}

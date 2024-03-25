@@ -1,0 +1,11 @@
+@use "mixins" as mix;
+
+.header{
+  background-image: url('../assets/images/background-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 231px;
+  @include mix.destock(){
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+}
